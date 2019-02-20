@@ -9,12 +9,12 @@ services:
       RABBITMQ_DEFAULT_PASS: "admin"
       RABBITMQ_DEFAULT_VHOST: "/"
     ports:
-    - "9090:8080"
+    - "8080:5672"
     labels:
       NAME: "rabbitmq"
 
   app:
-    container_name: app_cont
-    image: "tomcat-cont:latest"
+    container_name: app_cont 
+    build: . 
     ports:
-    - "9091:8081"
+    - "8082:8080"
