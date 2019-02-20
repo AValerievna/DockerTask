@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rabbitmq:
+    container_name: rabbitmq_cont
+    image: 'rabbitmq:3.6-management'
+    hostname: "rabbitmq"
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+    - "9090:8080"
+    labels:
+      NAME: "rabbitmq"
+
+  app:
+    container_name: app_cont
+    image: "tomcat-cont:latest"
+    ports:
+    - "9091:8081"
