@@ -5,8 +5,8 @@ ENV CATALINA_HOME:   /usr/local/tomcat
 ENV CATALINA_TMPDIR: /usr/local/tomcat/temp
 ENV JRE_HOME:        /usr
 ENV CLASSPATH:       /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar
-ENV GIT_USR:   <username>
-ENV GIT_PSWD:   <password>
+ARG pass=<username>
+ARG login=<password>
 
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
